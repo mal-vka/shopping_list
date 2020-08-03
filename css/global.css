@@ -1,0 +1,31 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-image: url("../images/lukas-blazek-EWDvHNNfUmQ-unsplash.jpg");
+    background-size: cover;
+    text-align: center;
+}
+
+.container {    
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.sheet {
+    max-width: 500px;
+    min-height: 70vh;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 1px 1px 1px #ddd;
+}
+
+.list {
+    text-align: left;
+}
