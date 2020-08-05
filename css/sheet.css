@@ -9,4 +9,26 @@
 
 .list {
     text-align: left;
+    list-style: none;    
+    padding: 10px;
+}
+
+.list__item {
+    margin: 10px 0;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 10px;
+    word-wrap: wrap;
+}
+
+.list__button {
+    width: 40px;
+    background: white;
+    border: none;
+}
+
+.list__button--toggleDone {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
 }
