@@ -19,17 +19,17 @@
 
 .form__button {
     padding: 10px;
-    background: hsla(0, 0%, 100%, 0.4);   
+    background: hsla(0, 0%, 100%, 0.6);   
     border: none;   
     border-radius: 5px;
 }
 @media (max-width: 767px) {
     .form__button {
-        width: 50vw;
+        width: 30vw;
         margin: 0 auto;
     }
 }
 
 .form__button:hover {
-    background: hsla(0, 0%, 100%, 0.6); 
+    background: hsla(0, 0%, 100%, 0.8); 
 }
