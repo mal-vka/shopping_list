@@ -1,15 +1,40 @@
 {
     const list = [];
 
-    const addItem = (newItem) => {
+    const addNewItem = (newItem) => {
         list.push({content: newItem});
         display();                
     };
 
-    // const removeItem = (index) => {
-    //     list.splice(index, 1);
-    //     display();
-    // };
+    const removeItem = (index) => {   
+        list.splice(index, 1);
+        display();
+    };
+
+    const toggleDoneItem = (index) => {
+        list[index].done = !list[index].done;
+        display();
+    };
+
+    const bindRemoveEvent = () => {
+        const removeButtons = document.querySelectorAll(".js-remove");   
+        
+        removeButtons.forEach((removeButton, index) => {
+            removeButton.addEventListener("click", () => {
+                removeItem(index);
+            });            
+        });
+    };
+
+    const bindToggleDoneEvent = () => {
+        const toggleDoneButtons = document.querySelectorAll(".js-toggleDone");   
+        
+        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+            toggleDoneButton.addEventListener("click", () => {
+                toggleDoneItem(index);
+            });            
+        });
+    };
 
     const display = () => {
         let yetDisplay = "";
@@ -32,19 +57,23 @@
         };
 
         document.querySelector(".js-list").innerHTML = yetDisplay;
+
+        bindRemoveEvent();
+        bindToggleDoneEvent();
     };
     
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const newItem = document.querySelector(".js-input").value.trim();
+        const newItemElement = document.querySelector(".js-input");
+        const newItem = newItemElement.value.trim()
 
         if (newItem !== "") {
-            addItem(newItem);
-            // newItem.value = "";             
+            addNewItem(newItem);
+            newItemElement.value = "";             
         }     
         
-        // newItem.focus();
+        newItemElement.focus();
     };
     
     const init = () => {
