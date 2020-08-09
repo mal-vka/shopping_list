@@ -14,11 +14,16 @@
 }
 
 .list__item {
-    margin: 10px 0;
+    padding: 15px 0;
     display: grid;
     grid-template-columns: auto 1fr auto;
-    grid-gap: 10px;
-    word-wrap: wrap;
+    grid-gap: 10px;    
+}
+
+.list__content {    
+    align-self: start;
+    overflow-wrap: break-word; 
+    word-break: break-all;   
 }
 
 .list__button {
