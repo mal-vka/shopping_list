@@ -43,14 +43,14 @@
             yetDisplay += `
             <li class="list__item js-task">
                 <button class="list__button list__button--toggleDone js-toggleDone">
-                    ${item.done ? "<img src='../images/008-checked-1.svg'>" : ""}
+                    ${item.done ? "<img src='images/008-checked-1.svg'>" : ""}
                 </button>
 
                 <span class="list__content">
                     ${item.content}
                 </span>
 
-                <button class="list__button list__button--remove js-remove"><img src="../images/005-garbage.svg">
+                <button class="list__button list__button--remove js-remove"><img src="images/005-garbage.svg">
                 </button>
             </li>
             `;
