@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,12 @@
     <meta property="og:image" content="">
     <link rel="icon" href="images/001-list.svg">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 
     <link href="css/global.css" rel="stylesheet">
     <link href="css/container.css" rel="stylesheet">
@@ -23,15 +27,16 @@
 
     <script src="js/script.js" defer></script>
 </head>
+
 <body>
     <div class="container">
 
         <h1 class="header">Your shopping list</h1>
-        
+
         <form class="form js-form">
             <input class="form__input js-input" placeholder="What do you want to add to your shopping list?">
-            <button class="form__button js-addButton">Add to list</button>
-        </form>        
+            <button class="button js-addButton">Add to list</button>
+        </form>
 
         <section class="sheet">
             <h2 class="sheet__header">My shopping list</h2>
@@ -39,8 +44,14 @@
 
             </ul>
         </section>
+
+        <section class="clear">
+            <button class="button js-clearListButton">Clear all</button>
+        </section>
+
     </div>
-    
+
     <footer class="footer">Powered by your_fav_dev</footer>
 </body>
+
 </html>

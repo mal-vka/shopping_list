@@ -1,5 +1,5 @@
 {
-    const list = [];
+    let list = [];
 
     const addNewItem = (newItem) => {
         list.push({content: newItem});
@@ -14,7 +14,7 @@
     const toggleDoneItem = (index) => {
         list[index].done = !list[index].done;
         display();
-    };
+    };    
 
     const bindRemoveEvent = () => {
         const removeButtons = document.querySelectorAll(".js-remove");   
@@ -34,7 +34,7 @@
                 toggleDoneItem(index);
             });            
         });
-    };
+    };   
 
     const display = () => {
         let yetDisplay = "";
@@ -66,7 +66,7 @@
         event.preventDefault();
 
         const newItemElement = document.querySelector(".js-input");
-        const newItem = newItemElement.value.trim()
+        const newItem = newItemElement.value.trim();
 
         if (newItem !== "") {
             addNewItem(newItem);
@@ -76,9 +76,18 @@
         newItemElement.focus();
     };
     
+    const onClearButton = () => {
+        list = [];        
+        display();
+        return list;
+    };
+
     const init = () => {
         const form = document.querySelector(".js-form");
         form.addEventListener("submit", onFormSubmit);
+
+        const clearListButton = document.querySelector(".js-clearListButton");
+        clearListButton.addEventListener("click", onClearButton);
     };
 
     init();
