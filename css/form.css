@@ -26,12 +26,12 @@
 }
 
 @media (max-width: 767px) {
-    .form__button {
+    .button {
         width: 30vw;
         margin: 0 auto;
     }
 }
 
-.form__button:hover {
+.button:hover {
     background: hsla(0, 0%, 100%, 0.8);
 }
