@@ -23,17 +23,17 @@
 .list__content {
     align-self: start;
     overflow-wrap: break-word;
-    word-break: break-all;
+    /* word-break: break-all; */
 }
 
 .list__button {
-    width: 40px;
+    width: 20px;
+    height: 20px;
     background: white;
     border: none;
+    padding: 0;
 }
 
-.list__button--toggleDone {
-    width: 40px;
-    height: 40px;
-    border: 1px solid black;
+.list__button:focus, .list__button:active {
+    overflow: hidden;
 }

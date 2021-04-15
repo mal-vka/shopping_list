@@ -2,11 +2,11 @@
     let list = [];
 
     const addNewItem = (newItem) => {
-        list.push({content: newItem});
-        display();                
+        list.push({ content: newItem });
+        display();
     };
 
-    const removeItem = (index) => {   
+    const removeItem = (index) => {
         list.splice(index, 1);
         display();
     };
@@ -14,27 +14,27 @@
     const toggleDoneItem = (index) => {
         list[index].done = !list[index].done;
         display();
-    };    
+    };
 
     const bindRemoveEvent = () => {
-        const removeButtons = document.querySelectorAll(".js-remove");   
-        
+        const removeButtons = document.querySelectorAll(".js-remove");
+
         removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
                 removeItem(index);
-            });            
+            });
         });
     };
 
     const bindToggleDoneEvent = () => {
-        const toggleDoneButtons = document.querySelectorAll(".js-toggleDone");   
-        
+        const toggleDoneButtons = document.querySelectorAll(".js-toggleDone");
+
         toggleDoneButtons.forEach((toggleDoneButton, index) => {
             toggleDoneButton.addEventListener("click", () => {
                 toggleDoneItem(index);
-            });            
+            });
         });
-    };   
+    };
 
     const display = () => {
         let yetDisplay = "";
@@ -42,15 +42,16 @@
         for (const item of list) {
             yetDisplay += `
             <li class="list__item js-task">
-                <button class="list__button list__button--toggleDone js-toggleDone">
-                    ${item.done ? "<img src='images/008-checked-1.svg'>" : ""}
+                <button class="list__button js-toggleDone">
+                    ${item.done ? "<img src='images/checked.svg'>" : "<img src='images/stop.svg'>"}
                 </button>
 
                 <span class="list__content">
                     ${item.content}
                 </span>
 
-                <button class="list__button list__button--remove js-remove"><img src="images/005-garbage.svg">
+                <button class="list__button list__button--remove js-remove">
+                    <img src="images/garbage.svg">
                 </button>
             </li>
             `;
@@ -61,7 +62,7 @@
         bindRemoveEvent();
         bindToggleDoneEvent();
     };
-    
+
     const onFormSubmit = (event) => {
         event.preventDefault();
 
@@ -70,14 +71,14 @@
 
         if (newItem !== "") {
             addNewItem(newItem);
-            newItemElement.value = "";             
-        }     
-        
+            newItemElement.value = "";
+        }
+
         newItemElement.focus();
     };
-    
+
     const onClearButton = () => {
-        list = [];        
+        list = [];
         display();
         return list;
     };
