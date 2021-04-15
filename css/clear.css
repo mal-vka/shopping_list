@@ -1,0 +1,6 @@
+.clear {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    justify-content: center;
+}

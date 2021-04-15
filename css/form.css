@@ -17,21 +17,3 @@
     border: none;
     border-radius: 5px;
 }
-
-.button {
-    padding: 10px;
-    background: hsla(0, 0%, 100%, 0.6);
-    border: none;
-    border-radius: 5px;
-}
-
-@media (max-width: 767px) {
-    .button {
-        width: 30vw;
-        margin: 0 auto;
-    }
-}
-
-.button:hover {
-    background: hsla(0, 0%, 100%, 0.8);
-}

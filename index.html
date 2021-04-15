@@ -20,6 +20,8 @@
     <link href="css/header.css" rel="stylesheet">
     <link href="css/form.css" rel="stylesheet">
     <link href="css/sheet.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/clear.css" rel="stylesheet">
     <link href="css/footer.css" rel="stylesheet">
 
     <script src="js/script.js" defer></script>
@@ -35,17 +37,30 @@
             <button class="button js-addButton">Add to list</button>
         </form>
 
-        <section class="sheet">
-            <h2 class="sheet__header">My shopping list</h2>
-            <ul class="list js-list">
+        <div class="main">
+            <section class="switchingLists">
+                <button class="button">Add new list</button>
+                <ul class="listOfLists">
 
-            </ul>
-        </section>
+                </ul>
+            </section>
+
+            <section class="sheet">
+                <h2 class="sheet__header">My shopping list</h2>
+                <button class="buttonImage">
+                    <img src="images/edit.svg">
+                </button>
+                <ul class="list js-list">
+
+                </ul>
+            </section>
+        </div>
 
         <section class="clear">
-            <button class="button js-clearListButton">Clear all</button>
+            <button class="button js-clearCheckedListButton">Clear checked</button>
+            <button class="button js-clearAllListButton">Clear all</button>
+            <!-- <button class="button js-clearAllListButton">Delete list</button> -->
         </section>
-
     </div>
 
     <footer class="footer">Powered by mal_vka</footer>

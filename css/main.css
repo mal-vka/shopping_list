@@ -1,0 +1,13 @@
+.main {
+    /* padding: 15px 0; */
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 50px;
+    margin: 50px 0;
+}
+
+@media (max-width: 767px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+}

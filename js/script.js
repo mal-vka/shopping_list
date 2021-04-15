@@ -42,7 +42,7 @@
         for (const item of list) {
             yetDisplay += `
             <li class="list__item js-task">
-                <button class="list__button js-toggleDone">
+                <button class="buttonImage js-toggleDone">
                     ${item.done ? "<img src='images/checked.svg'>" : "<img src='images/stop.svg'>"}
                 </button>
 
@@ -50,7 +50,7 @@
                     ${item.content}
                 </span>
 
-                <button class="list__button list__button--remove js-remove">
+                <button class="buttonImage buttonImage--remove js-remove">
                     <img src="images/garbage.svg">
                 </button>
             </li>
@@ -77,7 +77,7 @@
         newItemElement.focus();
     };
 
-    const onClearButton = () => {
+    const onClearAllButton = () => {
         list = [];
         display();
         return list;
@@ -87,8 +87,8 @@
         const form = document.querySelector(".js-form");
         form.addEventListener("submit", onFormSubmit);
 
-        const clearListButton = document.querySelector(".js-clearListButton");
-        clearListButton.addEventListener("click", onClearButton);
+        const clearAllListButton = document.querySelector(".js-clearAllListButton");
+        clearAllListButton.addEventListener("click", onClearAllButton);
     };
 
     init();

@@ -10,6 +10,37 @@ body {
     font-family: 'Lato', sans-serif;
     background-image: url("../images/lukas-blazek-EWDvHNNfUmQ-unsplash.jpg");
     background-size: cover;
-    text-align: center;  
-    margin: 0 10px;  
+    text-align: center;
+    margin: 0 10px;
+}
+
+.button {
+    width: 150px;
+    padding: 10px;
+    background: hsla(0, 0%, 100%, 0.6);
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 360px) {
+    .button {
+        width: 120px;
+        margin: 0 auto;
+    }
+}
+
+.button:hover {
+    background: hsla(0, 0%, 100%, 0.8);
+}
+
+.buttonImage {
+    width: 25px;
+    height: 25px;
+    background: white;
+    border: none;
+    padding: 0;
+}
+
+.buttonImage:focus, .buttonImage:active {
+    overflow: hidden;
 }
