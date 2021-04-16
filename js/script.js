@@ -16,6 +16,12 @@
         display();
     };
 
+    const onEditNameListButton = () => {
+        const nameList = document.querySelector(".js-nameList");
+        nameList.contentEditable = true;
+        nameList.focus();
+    };
+
     const bindRemoveEvent = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -86,6 +92,9 @@
     const init = () => {
         const form = document.querySelector(".js-form");
         form.addEventListener("submit", onFormSubmit);
+
+        const editNameListButton = document.querySelector(".js-editListName");
+        editNameListButton.addEventListener("click", onEditNameListButton);
 
         const clearAllListButton = document.querySelector(".js-clearAllListButton");
         clearAllListButton.addEventListener("click", onClearAllButton);
