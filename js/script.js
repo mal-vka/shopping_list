@@ -12,7 +12,7 @@
     };
 
     const toggleDoneItem = (index) => {
-        list[index].done = !list[index].done;
+        list[index].checked = !list[index].checked;
         display();
     };
 
@@ -70,7 +70,7 @@
             yetDisplay += `
             <li class="list__item js-task">
                 <button class="buttonImage js-toggleDone">
-                    ${item.done ? "<img src='images/checked.svg'>" : "<img src='images/square.svg'>"}
+                    ${item.checked ? "<img src='images/checked.svg'>" : "<img src='images/square.svg'>"}
                 </button>
 
                 <span class="list__content">
@@ -104,6 +104,15 @@
         newItemElement.focus();
     };
 
+    const onClearCheckedButton = () => {
+        for (const [index, item] of list.entries()) {
+            if (item.checked) {
+                list.splice(index, 1);
+            }
+        };
+        display();
+    };
+    
     const onClearAllButton = () => {
         list = [];
         display();
@@ -116,6 +125,9 @@
 
         document.querySelector(".js-editListNameImage").addEventListener("click", onEditNameListButton);
         document.querySelector(".js-saveListNameImage").addEventListener("click", onSaveNameListButton);
+
+        const clearCheckedButton = document.querySelector(".js-clearCheckedListButton");
+        clearCheckedButton.addEventListener("click", onClearCheckedButton);
 
         const clearAllListButton = document.querySelector(".js-clearAllListButton");
         clearAllListButton.addEventListener("click", onClearAllButton);
