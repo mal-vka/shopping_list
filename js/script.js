@@ -16,10 +16,31 @@
         display();
     };
 
+    const toggleNoDisplayClass = (element) => {
+        element.classList.toggle("noDisplay");
+    };
+
     const onEditNameListButton = () => {
-        const nameList = document.querySelector(".js-nameList");
-        nameList.contentEditable = true;
-        nameList.focus();
+        const nameListElement = document.querySelector(".js-nameList");
+        nameListElement.contentEditable = true;
+
+        nameListElement.style.backgroundColor = "rgb(215, 219, 221)";
+        nameListElement.focus();
+
+        toggleNoDisplayClass(document.querySelector(".js-editListNameImage"));
+        toggleNoDisplayClass(document.querySelector(".js-saveListNameImage"));
+    };
+
+    const onSaveNameListButton = () => {
+        const nameListElement = document.querySelector(".js-nameList");
+
+
+
+        nameListElement.contentEditable = false;
+        nameListElement.style.backgroundColor = "white";
+        
+        toggleNoDisplayClass(document.querySelector(".js-editListNameImage"));
+        toggleNoDisplayClass(document.querySelector(".js-saveListNameImage"));
     };
 
     const bindRemoveEvent = () => {
@@ -49,7 +70,7 @@
             yetDisplay += `
             <li class="list__item js-task">
                 <button class="buttonImage js-toggleDone">
-                    ${item.done ? "<img src='images/checked.svg'>" : "<img src='images/stop.svg'>"}
+                    ${item.done ? "<img src='images/checked.svg'>" : "<img src='images/square.svg'>"}
                 </button>
 
                 <span class="list__content">
@@ -90,11 +111,11 @@
     };
 
     const init = () => {
-        const form = document.querySelector(".js-form");
-        form.addEventListener("submit", onFormSubmit);
+        const formElement = document.querySelector(".js-form");
+        formElement.addEventListener("submit", onFormSubmit);
 
-        const editNameListButton = document.querySelector(".js-editListName");
-        editNameListButton.addEventListener("click", onEditNameListButton);
+        document.querySelector(".js-editListNameImage").addEventListener("click", onEditNameListButton);
+        document.querySelector(".js-saveListNameImage").addEventListener("click", onSaveNameListButton);
 
         const clearAllListButton = document.querySelector(".js-clearAllListButton");
         clearAllListButton.addEventListener("click", onClearAllButton);
