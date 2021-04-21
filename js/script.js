@@ -1,18 +1,19 @@
 {
-    let list = [];
+    let listA = {listName: "My shopping list",
+                listItems: []};    
 
     const addNewItem = (newItem) => {
-        list.push({ content: newItem });
-        display();
+        listA["listItems"].push({ content: newItem });
+        display();        
     };
 
     const removeItem = (index) => {
-        list.splice(index, 1);
+        listA["listItems"].splice(index, 1);
         display();
     };
 
     const toggleDoneItem = (index) => {
-        list[index].checked = !list[index].checked;
+        listA["listItems"][index].checked = !listA["listItems"][index].checked;
         display();
     };
 
@@ -32,9 +33,10 @@
     };
 
     const onSaveNameListButton = () => {
+
         const nameListElement = document.querySelector(".js-nameList");
-
-
+        const newListName = nameListElement.innerText;        
+        listA["listName"] = newListName;
 
         nameListElement.contentEditable = false;
         nameListElement.style.backgroundColor = "white";
@@ -64,9 +66,10 @@
     };
 
     const display = () => {
+        
         let yetDisplay = "";
 
-        for (const item of list) {
+        for (const item of listA["listItems"]) {
             yetDisplay += `
             <li class="list__item js-task">
                 <button class="buttonImage js-toggleDone">
@@ -105,18 +108,19 @@
     };
 
     const onClearCheckedButton = () => {
-        for (const [index, item] of list.entries()) {
+        for (const [index, item] of listA["listItems"].entries()) {
             if (item.checked) {
-                list.splice(index, 1);
+                listA["listItems"].splice(index, 1);
             }
         };
         display();
     };
     
     const onClearAllButton = () => {
-        list = [];
+        listA = {listname: "My shopping list",
+                listItems: []};
         display();
-        return list;
+        return listA;
     };
 
     const init = () => {
