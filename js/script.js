@@ -46,6 +46,8 @@
 
         toggleNoDisplayClass(document.querySelector(".js-editListNameImage"));
         toggleNoDisplayClass(document.querySelector(".js-saveListNameImage"));
+
+        displayListOfLists();
     };
 
     const bindRemoveEvent = () => {
@@ -69,11 +71,15 @@
     };
 
     const display = () => {
+        displayList();
+        displayListOfLists();
+    };
 
-        let yetDisplay = "";
+    const displayList = () => {
+        let yetDisplayItems = "";
 
         for (const item of userLists[currentListIndex].listItems) {
-            yetDisplay += `
+            yetDisplayItems += `
             <li class="list__item js-task">
                 <button class="buttonImage js-toggleDone">
                     ${item.checked ? "<img src='images/checked.svg'>" : "<img src='images/square.svg'>"}
@@ -90,10 +96,23 @@
             `;
         };
 
-        document.querySelector(".js-list").innerHTML = yetDisplay;
+        document.querySelector(".js-list").innerHTML = yetDisplayItems;
 
         bindRemoveEvent();
         bindToggleDoneEvent();
+    };
+
+    const displayListOfLists = () => {
+        yetDisplayLists = "";
+        for (const [index, shoppingList] of userLists.entries()) {
+            yetDisplayLists += `
+                <li class="js-toggleListButton">
+                    <button class="button">${shoppingList.listName} #${index + 1}</button>
+                </li>
+            `;
+        };
+
+        document.querySelector(".js-listOfLists").innerHTML = yetDisplayLists;
     };
 
     const onFormSubmit = (event) => {
@@ -129,8 +148,6 @@
 
     const onAddNewListButton = () => {
         userLists.push({ listName: "My shopping list", listItems: [] });
-
-        console.log(userLists);
         display();
     };
 
