@@ -1,6 +1,15 @@
 .clear {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     grid-gap: 10px;
     justify-content: center;
+}
+
+.button--addList:hover {
+    background-color: hsla(90, 50%, 50%, 0.6);
+    /* background-color: hsl(100, 80%, 50%, 0.5); */
+}
+
+.button--deleteList:hover {
+    background-color: hsla(0, 100%, 50%, 0.4);
 }

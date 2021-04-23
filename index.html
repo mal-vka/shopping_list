@@ -24,6 +24,7 @@
     <link href="css/form.css" rel="stylesheet">
     <link href="css/sheet.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link href="css/switching_lists.css" rel="stylesheet">
     <link href="css/clear.css" rel="stylesheet">
     <link href="css/footer.css" rel="stylesheet">
 
@@ -42,10 +43,12 @@
 
         <div class="main">
             <section class="switchingLists">
-                <button class="button js-addNewListButton">Add new list</button>
+                <h3 class="switchingLists__title">My lists:</h3>
                 <ul class="listOfLists js-listOfLists">
 
                 </ul>
+
+                <button class="button button--addList js-addNewListButton">Add new list</button>
             </section>
 
             <section class="sheet">
@@ -63,8 +66,9 @@
         <section class="clear">
             <button class="button js-clearCheckedListButton">Clear checked</button>
             <button class="button js-clearAllListButton">Clear all</button>
-            <!-- <button class="button js-clearAllListButton">Delete list</button> -->
+            <button class="button button--deleteList js-deleteListButton">Delete list</button>
         </section>
+
     </div>
 
     <footer class="footer">Powered by mal_vka</footer>
