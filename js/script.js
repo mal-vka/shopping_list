@@ -1,6 +1,6 @@
 {
     let userLists = [{ listName: "My shopping list", listItems: [] },
-    { listName: "My shopping list", listItems: [] }
+    { listName: "Shopping list", listItems: [] }
     ];
 
     let currentListIndex = 0;
@@ -22,32 +22,6 @@
 
     const toggleNoDisplayClass = (element) => {
         element.classList.toggle("noDisplay");
-    };
-
-    const onEditNameListButton = () => {
-        const nameListElement = document.querySelector(".js-nameList");
-        nameListElement.contentEditable = true;
-
-        nameListElement.style.backgroundColor = "rgb(215, 219, 221)";
-        nameListElement.focus();
-
-        toggleNoDisplayClass(document.querySelector(".js-editListNameImage"));
-        toggleNoDisplayClass(document.querySelector(".js-saveListNameImage"));
-    };
-
-    const onSaveNameListButton = () => {
-
-        const nameListElement = document.querySelector(".js-nameList");
-        const newListName = nameListElement.innerText;
-        userLists[currentListIndex].listName = newListName;
-
-        nameListElement.contentEditable = false;
-        nameListElement.style.backgroundColor = "white";
-
-        toggleNoDisplayClass(document.querySelector(".js-editListNameImage"));
-        toggleNoDisplayClass(document.querySelector(".js-saveListNameImage"));
-
-        displayListOfLists();
     };
 
     const bindRemoveEvent = () => {
@@ -76,6 +50,9 @@
     };
 
     const displayList = () => {
+
+        document.querySelector(".js-nameList").innerHTML = userLists[currentListIndex].listName;
+
         let yetDisplayItems = "";
 
         for (const item of userLists[currentListIndex].listItems) {
@@ -106,8 +83,11 @@
         yetDisplayLists = "";
         for (const [index, shoppingList] of userLists.entries()) {
             yetDisplayLists += `
-                <li class="js-toggleListButton">
-                    <button class="button">${shoppingList.listName} #${index + 1}</button>
+                <li class="js-switchListButton">
+                    <button class="button 
+                        ${index === currentListIndex ? "currentListHighlight" : ""}
+                        button--ofSwitchingList">${shoppingList.listName} #${index + 1}
+                    </button>
                 </li>
             `;
         };
@@ -151,6 +131,32 @@
         display();
     };
 
+    const onEditNameListButton = () => {
+        const nameListElement = document.querySelector(".js-nameList");
+        nameListElement.contentEditable = true;
+
+        nameListElement.style.backgroundColor = "rgb(215, 219, 221)";
+        nameListElement.focus();
+
+        toggleNoDisplayClass(document.querySelector(".js-editListNameImage"));
+        toggleNoDisplayClass(document.querySelector(".js-saveListNameImage"));
+    };
+
+    const onSaveNameListButton = () => {
+
+        const nameListElement = document.querySelector(".js-nameList");
+        const newListName = nameListElement.innerText;
+        userLists[currentListIndex].listName = newListName;
+
+        nameListElement.contentEditable = false;
+        nameListElement.style.backgroundColor = "white";
+
+        toggleNoDisplayClass(document.querySelector(".js-editListNameImage"));
+        toggleNoDisplayClass(document.querySelector(".js-saveListNameImage"));
+
+        displayListOfLists();
+    };
+
     const init = () => {
         const formElement = document.querySelector(".js-form");
         formElement.addEventListener("submit", onFormSubmit);
@@ -166,6 +172,8 @@
 
         const addNewListButton = document.querySelector(".js-addNewListButton");
         addNewListButton.addEventListener("click", onAddNewListButton);
+
+        display();
     };
 
     init();
