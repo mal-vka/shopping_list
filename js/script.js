@@ -1,6 +1,7 @@
 {
-    let userLists = [{ listName: "My shopping list", listItems: [] },
-    { listName: "Shopping list", listItems: [] }
+    let userLists = [{ listName: "Everyday Shopping List", listItems: [{ content: "wholemeal grain bread", checked: true }, { content: "cheese" }, { content: "ripe soft red tomatoes, not too big but also not small, without stalks" }, { content: "black olives x one jar" }, { content: "zucchini" }, { content: "eggplant" }, { content: "yeast", checked: true }, { content: "flour", checked: true }, { content: "pepper" }] },
+    { listName: "Cosmetics and Household Chemicals", listItems: [{ content: "toothpaste" }, { content: "showergel" }, { content: "color washing powder", checked: true }] },
+    { listName: "My Plants", listItems: [{ content: "fertilizer" }, { content: "herb seeds" }] }
     ];
 
     let currentListIndex = 0;
@@ -17,6 +18,11 @@
 
     const toggleDoneItem = (index) => {
         userLists[currentListIndex].listItems[index].checked = !userLists[currentListIndex].listItems[index].checked;
+        display();
+    };
+
+    const switchList = (index) => {
+        currentListIndex = index;
         display();
     };
 
@@ -40,6 +46,16 @@
         toggleDoneButtons.forEach((toggleDoneButton, index) => {
             toggleDoneButton.addEventListener("click", () => {
                 toggleDoneItem(index);
+            });
+        });
+    };
+
+    const bindSwitchListEvent = () => {
+        const switchListButtons = document.querySelectorAll(".js-switchListButton");
+
+        switchListButtons.forEach((switchListButtons, index) => {
+            switchListButtons.addEventListener("click", () => {
+                switchList(index);
             });
         });
     };
@@ -86,13 +102,15 @@
                 <li class="js-switchListButton">
                     <button class="button 
                         ${index === currentListIndex ? "currentListHighlight" : ""}
-                        button--ofSwitchingList">${shoppingList.listName} #${index + 1}
+                        button--ofSwitchingList">${shoppingList.listName}
                     </button>
                 </li>
             `;
         };
 
         document.querySelector(".js-listOfLists").innerHTML = yetDisplayLists;
+
+        bindSwitchListEvent();
     };
 
     const onFormSubmit = (event) => {
