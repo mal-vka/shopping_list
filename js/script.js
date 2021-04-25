@@ -149,6 +149,12 @@
         display();
     };
 
+    const onDeleteListButton = () => {
+        userLists.splice(currentListIndex, 1);
+        currentListIndex = 0;
+        display();
+    };
+
     const onEditNameListButton = () => {
         const nameListElement = document.querySelector(".js-nameList");
         nameListElement.contentEditable = true;
@@ -190,6 +196,9 @@
 
         const addNewListButton = document.querySelector(".js-addNewListButton");
         addNewListButton.addEventListener("click", onAddNewListButton);
+
+        const deleteListButton = document.querySelector(".js-deleteListButton");
+        deleteListButton.addEventListener("click", onDeleteListButton);
 
         display();
     };
