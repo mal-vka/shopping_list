@@ -26,6 +26,15 @@
         display();
     };
 
+    const closeModal = () => {
+        if (!document.querySelector(".js-modalTooManyLists").classList.contains("noDisplay")) {
+            document.querySelector(".js-modalTooManyLists").classList.add("noDisplay");
+        } else {
+            document.querySelector(".js-modalAtLeastOneList").classList.add("noDisplay");
+        };
+        document.querySelector(".js-overlay").classList.add("noDisplay");
+    };
+
     const toggleNoDisplayClass = (element) => {
         element.classList.toggle("noDisplay");
     };
@@ -145,14 +154,24 @@
     };
 
     const onAddNewListButton = () => {
-        userLists.push({ listName: "My shopping list", listItems: [] });
-        display();
+        if (userLists.length > 4) {
+            document.querySelector(".js-modalTooManyLists").classList.remove("noDisplay");
+            document.querySelector(".js-overlay").classList.remove("noDisplay");
+        } else {
+            userLists.push({ listName: "My shopping list", listItems: [] });
+            display();
+        };
     };
 
     const onDeleteListButton = () => {
-        userLists.splice(currentListIndex, 1);
-        currentListIndex = 0;
-        display();
+        if (userLists.length < 2) {
+            document.querySelector(".js-modalAtLeastOneList").classList.remove("noDisplay");
+            document.querySelector(".js-overlay").classList.remove("noDisplay");
+        } else {
+            userLists.splice(currentListIndex, 1);
+            currentListIndex = 0;
+            display();
+        };
     };
 
     const onEditNameListButton = () => {
@@ -199,6 +218,13 @@
 
         const deleteListButton = document.querySelector(".js-deleteListButton");
         deleteListButton.addEventListener("click", onDeleteListButton);
+
+        const closeModalButtons = document.querySelectorAll(".js-modalClose");
+
+        closeModalButtons.forEach((closeModalButtons) => {
+            closeModalButtons.addEventListener("click", closeModal);
+        });
+        document.querySelector(".js-overlay").addEventListener("click", closeModal);
 
         display();
     };

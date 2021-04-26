@@ -37,7 +37,7 @@
         <h1 class="header">Your shopping list</h1>
 
         <form class="form js-form">
-            <input class="form__input js-input" placeholder="What do you want to add to your shopping list?">
+            <input class="form__input js-input" placeholder="What do you want to add to current shopping list?">
             <button class="button js-addButton">Add to list</button>
         </form>
 
@@ -49,6 +49,13 @@
                 </ul>
 
                 <button class="button button--addList js-addNewListButton">Add new list</button>
+                <div class="modal noDisplay js-modalTooManyLists">
+                    <button class="modalClose js-modalClose">&times;</button>
+                    <h3 class="modalTitle">Can't add another list!</h3>
+                    <p class="modalParagraph">
+                        You can have up to 5 lists!
+                    </p>
+                </div>
             </section>
 
             <section class="sheet">
@@ -67,8 +74,15 @@
             <button class="button js-clearCheckedListButton">Clear checked</button>
             <button class="button js-clearAllListButton">Clear all</button>
             <button class="button button--deleteList js-deleteListButton">Delete list</button>
+            <div class="modal noDisplay js-modalAtLeastOneList">
+                <button class="modalClose js-modalClose">&times;</button>
+                <h3 class="modalTitle">This list cannot be deleted!</h3>
+                <p class="modalParagraph">
+                    You must have at least one list!
+                </p>
+            </div>
         </section>
-
+        <div class="overlay noDisplay js-overlay"></div>
     </div>
 
     <footer class="footer">Powered by mal_vka</footer>
