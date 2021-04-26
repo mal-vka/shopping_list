@@ -1,7 +1,7 @@
 .sheet {
     width: 50vh;
     max-width: 100%;
-    min-height: 60vh;
+    /* height: 60vh; */
     background-color: white;
     box-shadow: 5px 5px 10px gray;
     padding: 20px 30px;
@@ -26,6 +26,11 @@
     }
 }
 
+.sheet__listContainer {
+    height: 50vh;
+    overflow-y: auto;
+}
+
 .list {
     text-align: left;
     list-style: none;
@@ -40,6 +45,7 @@
     grid-template-columns: auto 1fr auto;
     grid-gap: 10px;
     align-self: center;
+    font-size: 18px;
 }
 
 .list__content {

@@ -20,12 +20,14 @@
 
     <link href="css/global.css" rel="stylesheet">
     <link href="css/container.css" rel="stylesheet">
+    <link href="css/buttons.css" rel="stylesheet">
     <link href="css/header.css" rel="stylesheet">
     <link href="css/form.css" rel="stylesheet">
-    <link href="css/sheet.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link href="css/sheet.css" rel="stylesheet">
     <link href="css/switching_lists.css" rel="stylesheet">
     <link href="css/clear.css" rel="stylesheet">
+    <link href="css/modals.css" rel="stylesheet">
     <link href="css/footer.css" rel="stylesheet">
 
     <script src="js/script.js" defer></script>
@@ -34,28 +36,22 @@
 <body>
     <div class="container">
 
-        <h1 class="header">Your shopping list</h1>
+        <h1 class="header">Your shopping notebook</h1>
 
         <form class="form js-form">
-            <input class="form__input js-input" placeholder="What do you want to add to current shopping list?">
+            <input class="form__input js-input" placeholder="What do you want to add to the current shopping list?">
             <button class="button js-addButton">Add to list</button>
         </form>
 
         <div class="main">
             <section class="switchingLists">
-                <h3 class="switchingLists__title">My lists:</h3>
+                <h3 class="switchingLists__title">My lists</h3>
                 <ul class="listOfLists js-listOfLists">
 
                 </ul>
 
                 <button class="button button--addList js-addNewListButton">Add new list</button>
-                <div class="modal noDisplay js-modalTooManyLists">
-                    <button class="modalClose js-modalClose">&times;</button>
-                    <h3 class="modalTitle">Can't add another list!</h3>
-                    <p class="modalParagraph">
-                        You can have up to 5 lists!
-                    </p>
-                </div>
+
             </section>
 
             <section class="sheet">
@@ -64,9 +60,11 @@
                     <img class="js-editListNameImage" src="images/edit.svg">
                     <img class="js-saveListNameImage noDisplay" src="images/check.svg">
                 </button>
-                <ul class="list js-list">
+                <div class="sheet__listContainer">
+                    <ul class="list js-list">
 
-                </ul>
+                    </ul>
+                </div>
             </section>
         </div>
 
@@ -74,15 +72,26 @@
             <button class="button js-clearCheckedListButton">Clear checked</button>
             <button class="button js-clearAllListButton">Clear all</button>
             <button class="button button--deleteList js-deleteListButton">Delete list</button>
-            <div class="modal noDisplay js-modalAtLeastOneList">
-                <button class="modalClose js-modalClose">&times;</button>
-                <h3 class="modalTitle">This list cannot be deleted!</h3>
-                <p class="modalParagraph">
-                    You must have at least one list!
-                </p>
-            </div>
+
         </section>
+
+
+        <div class="modal noDisplay js-modalTooManyLists">
+            <button class="modalClose js-modalClose">&times;</button>
+            <h3 class="modalTitle">Can't add another list!</h3>
+            <p class="modalParagraph">
+                You can have up to 5 lists!
+            </p>
+        </div>
+        <div class="modal noDisplay js-modalAtLeastOneList">
+            <button class="modalClose js-modalClose">&times;</button>
+            <h3 class="modalTitle">This list cannot be deleted!</h3>
+            <p class="modalParagraph">
+                You must have at least one list!
+            </p>
+        </div>
         <div class="overlay noDisplay js-overlay"></div>
+
     </div>
 
     <footer class="footer">Powered by mal_vka</footer>
