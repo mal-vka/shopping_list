@@ -38,12 +38,13 @@
 
         <h1 class="header">Your shopping notebook</h1>
 
-        <form class="form js-form">
-            <input class="form__input js-input" placeholder="What do you want to add to the current shopping list?">
-            <button class="button js-addButton">Add to list</button>
-        </form>
-
         <div class="main">
+
+            <form class="form js-form">
+                <input class="form__input js-input" placeholder="What do you want to add to the current shopping list?">
+                <button class="button js-addButton">Add to list</button>
+            </form>
+
             <section class="switchingLists">
                 <h3 class="switchingLists__title">My lists</h3>
                 <ul class="listOfLists js-listOfLists">
@@ -51,7 +52,6 @@
                 </ul>
 
                 <button class="button button--addList js-addNewListButton">Add new list</button>
-
             </section>
 
             <section class="sheet">
@@ -66,15 +66,13 @@
                     </ul>
                 </div>
             </section>
+
+            <section class="clear">
+                <button class="button js-clearCheckedListButton">Clear checked</button>
+                <button class="button js-clearAllListButton">Clear all</button>
+                <button class="button button--deleteList js-deleteListButton">Delete list</button>
+            </section>
         </div>
-
-        <section class="clear">
-            <button class="button js-clearCheckedListButton">Clear checked</button>
-            <button class="button js-clearAllListButton">Clear all</button>
-            <button class="button button--deleteList js-deleteListButton">Delete list</button>
-
-        </section>
-
 
         <div class="modal noDisplay js-modalTooManyLists">
             <button class="modalClose js-modalClose">&times;</button>

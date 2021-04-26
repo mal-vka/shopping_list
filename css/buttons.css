@@ -1,0 +1,54 @@
+.button {
+    width: 143px;
+    padding: 10px;
+    background: hsla(0, 0%, 100%, 0.6);
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 360px) {
+    .button {
+        width: 120px;
+        margin: 0 auto;
+    }
+}
+
+.button:hover {
+    background: hsla(0, 0%, 100%, 0.8);
+}
+
+.button--addList {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button--addList:hover {
+    background-color: hsla(90, 50%, 50%, 0.6);
+}
+
+.button--ofSwitchingList {
+    margin: 10px 0;
+    width: 200px;
+}
+
+.button--deleteList:hover {
+    background-color: hsla(0, 100%, 50%, 0.4);
+}
+
+.buttonImage {
+    width: 25px;
+    height: 25px;
+    background: white;
+    border: none;
+    padding: 0;
+}
+
+.buttonImage:focus, .buttonImage:active {
+    overflow: hidden;
+}
+
+.buttonImage:hover {
+    opacity: 0.5;
+}

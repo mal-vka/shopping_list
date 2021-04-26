@@ -1,0 +1,20 @@
+.switchingLists {
+    position: relative;
+}
+
+.switchingLists__title {
+    margin: 10px 0;
+}
+
+.listOfLists {
+    list-style: none;
+    padding: 0 10px;
+}
+
+.currentListHighlight {
+    background-color: hsla(60, 100%, 39%, 0.6);
+}
+
+.currentListHighlight:hover {
+    background-color: hsla(60, 100%, 39%, 0.8);
+}
