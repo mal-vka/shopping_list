@@ -1,8 +1,0 @@
-.clear {
-    grid-row-start: 3;
-    grid-column-start: 2;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 10px;
-    justify-content: start;
-}
