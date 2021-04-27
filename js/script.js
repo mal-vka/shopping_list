@@ -146,10 +146,7 @@
     };
 
     const onClearAllButton = () => {
-        userLists[currentListIndex] = {
-            listname: "My shopping list",
-            listItems: []
-        };
+        userLists[currentListIndex].listItems = [];
         display();
     };
 
@@ -179,7 +176,7 @@
         const nameListElement = document.querySelector(".js-nameList");
         nameListElement.contentEditable = true;
 
-        nameListElement.style.backgroundColor = "rgb(215, 219, 221)";
+        nameListElement.style.backgroundColor = "#eee";
         nameListElement.focus();
 
         toggleNoDisplayClass(document.querySelector(".js-editListNameImage"));
