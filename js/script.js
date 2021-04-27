@@ -159,6 +159,7 @@
             document.querySelector(".js-overlay").classList.remove("noDisplay");
         } else {
             userLists.push({ listName: "My shopping list", listItems: [] });
+            currentListIndex = userLists.length - 1;
             display();
         };
     };
