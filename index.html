@@ -36,7 +36,14 @@
 <body>
     <div class="container">
 
-        <h1 class="header">Your shopping notebook</h1>
+        <header class="header">
+            <h1 class="header__title">Your shopping notebook</h1>
+            <button class="buttonImage buttonImage--header js-menuButton">
+                <img class="js-menuImage" src="images/menu.svg">
+                <img class="js-closeImage noDisplay" src="images/close.svg">
+            </button>
+        </header>
+
 
         <div class="main">
 
@@ -55,11 +62,13 @@
             </section>
 
             <section class="sheet">
-                <h2 class="sheet__header js-nameList">My shopping list</h2>
-                <button class="buttonImage buttonImage--listName js-editListName">
-                    <img class="js-editListNameImage" src="images/edit.svg">
-                    <img class="js-saveListNameImage noDisplay" src="images/check.svg">
-                </button>
+                <div class="sheet__header">
+                    <h2 class="sheet__headerTitle js-nameList">My shopping list</h2>
+                    <button class="buttonImage buttonImage--listName js-editListName">
+                        <img class="js-editListNameImage" src="images/edit.svg">
+                        <img class="js-saveListNameImage noDisplay" src="images/check.svg">
+                    </button>
+                </div>
                 <div class="sheet__listContainer">
                     <ul class="list js-list">
 
