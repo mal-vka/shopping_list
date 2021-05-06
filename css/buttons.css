@@ -69,3 +69,15 @@
 .buttonImage--header {
     background: none;
 }
+
+.buttonImage--menu {
+    background: none;
+    vertical-align: middle;
+    margin: 5px;
+}
+
+.buttonImage--menuClose {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}

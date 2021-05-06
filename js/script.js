@@ -198,21 +198,35 @@
         displayListOfLists();
     };
 
+    const onMenuButton = () => {
+        toggleNoDisplayClass(document.querySelector(".js-menu"));
+        toggleNoDisplayClass(document.querySelector(".js-menuImage"));
+    };
+
+    const onCloseMenuButton = () => {
+        toggleNoDisplayClass(document.querySelector(".js-menu"));
+        toggleNoDisplayClass(document.querySelector(".js-menuImage"));
+    };
+
     const init = () => {
+
+        document.querySelector(".js-menuButton").addEventListener("click", onMenuButton);
+        document.querySelector(".js-closeMenuButton").addEventListener("click", onCloseMenuButton);
+
         const formElement = document.querySelector(".js-form");
         formElement.addEventListener("submit", onFormSubmit);
 
         document.querySelector(".js-editListNameImage").addEventListener("click", onEditNameListButton);
         document.querySelector(".js-saveListNameImage").addEventListener("click", onSaveNameListButton);
 
+        const addNewListButton = document.querySelector(".js-addNewListButton");
+        addNewListButton.addEventListener("click", onAddNewListButton);
+
         const clearCheckedButton = document.querySelector(".js-clearCheckedListButton");
         clearCheckedButton.addEventListener("click", onClearCheckedButton);
 
         const clearAllListButton = document.querySelector(".js-clearAllListButton");
         clearAllListButton.addEventListener("click", onClearAllButton);
-
-        const addNewListButton = document.querySelector(".js-addNewListButton");
-        addNewListButton.addEventListener("click", onAddNewListButton);
 
         const deleteListButton = document.querySelector(".js-deleteListButton");
         deleteListButton.addEventListener("click", onDeleteListButton);
