@@ -1,5 +1,5 @@
 {
-    let userLists = [{ listName: "Everyday Shopping List", listItems: [{ content: "wholemeal grain bread", checked: true }, { content: "cheese" }, { content: "ripe soft red tomatoes, not too big but also not small, without stalks" }, { content: "black olives x one jar" }, { content: "zucchini" }, { content: "eggplant" }, { content: "yeast", checked: true }, { content: "flour", checked: true }, { content: "pepper" }] },
+    let userLists = [{ listName: "Everyday Shopping List", listItems: [{ content: "wholemeal grain bread", checked: true }, { content: "cheese" }, { content: "ripe soft red tomatoes, not too big but also not small, without stalks" }, { content: "black olives x one jar" }, { content: "zucchini" }, { content: "eggplant" }, { content: "yeast", checked: true }, { content: "flour", checked: true }, { content: "pepper" }, { content: "lemons x 1kg" }] },
     { listName: "Cosmetics and Household Chemicals", listItems: [{ content: "toothpaste" }, { content: "showergel" }, { content: "color washing powder", checked: true }] },
     { listName: "My Plants", listItems: [{ content: "fertilizer" }, { content: "herb seeds" }] }
     ];
@@ -199,7 +199,7 @@
     };
 
     const onMenuButton = () => {
-        toggleNoDisplayClass(document.querySelector(".js-menu"));
+        document.querySelector(".js-menu").classList.toggle(".menu--active");
         toggleNoDisplayClass(document.querySelector(".js-menuImage"));
     };
 

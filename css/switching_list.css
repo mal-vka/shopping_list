@@ -2,6 +2,12 @@
     position: relative;
 }
 
+@media (max-width: 580px) {
+    .switchingLists {
+        display: none;
+    }
+}
+
 .switchingLists__title {
     margin: 10px 0;
 }

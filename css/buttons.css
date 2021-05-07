@@ -7,18 +7,20 @@
     justify-self: center;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 650px) {
     .button {
         font-size: 14px;
+        width: 120px;
+        max-width: 100%;
     }
 }
 
-@media (max-width: 360px) {
+/* @media (max-width: 360px) {
     .button {
         width: 120px;
         margin: 0 auto;
     }
-}
+} */
 
 .button:hover {
     background: hsla(0, 0%, 100%, 0.8);
@@ -56,6 +58,7 @@
     background: white;
     border: none;
     padding: 0;
+    /* vertical-align: middle; */
 }
 
 .buttonImage:focus, .buttonImage:active {
@@ -67,8 +70,15 @@
 }
 
 .buttonImage--header {
-    background: none;
+    visibility: hidden;
 }
+
+/* @media (max-width: 700px) {
+    .buttonImage--header {
+        visibility: visible;
+        background: none;
+    }
+} */
 
 .buttonImage--menu {
     background: none;

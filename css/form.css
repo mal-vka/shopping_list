@@ -1,14 +1,19 @@
 .form {
     grid-column-start: 2;
-    grid-column-end: 4;
     display: grid;
-    grid-template-columns: 450px auto;
+    grid-template-columns: auto auto;
     grid-gap: 10px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 830px) {
     .form {
-        grid-template-columns: 1fr;
+        grid-template-columns: 450px;
+    }
+}
+
+@media (max-width: 650px) {
+    .form {
+        grid-template-columns: 100%;
     }
 }
 
@@ -18,4 +23,11 @@
     border: none;
     border-radius: 5px;
     width: 450px;
+}
+
+@media (max-width: 700px) {
+    .form__input {
+        font-size: 16px;
+        width: 100%;
+    }
 }
