@@ -55,6 +55,16 @@
     }
 }
 
+.button--ofMenuList {
+    background: none;
+    border: none;
+    margin: 5px 10px;
+    padding: 10px 10px;
+    width: 90%;
+    text-align: left;
+    font-size: 18px;
+}
+
 .button--deleteList:hover {
     background-color: hsla(0, 100%, 50%, 0.4);
 }

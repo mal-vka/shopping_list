@@ -13,3 +13,13 @@
 .menu--active {
     transform: translateX(0px);
 }
+
+.menu__title {
+    font-size: 32px;
+    margin: 10px auto;
+}
+
+.listOfLists--menu {
+    position: absolute;
+    top: 15%;
+}
