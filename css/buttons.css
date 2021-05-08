@@ -15,6 +15,13 @@
     }
 }
 
+@media (max-width: 650px) {
+    .button {
+        font-size: 14px;
+        width: 143px;
+    }
+}
+
 /* @media (max-width: 360px) {
     .button {
         width: 120px;
@@ -71,14 +78,17 @@
 
 .buttonImage--header {
     visibility: hidden;
+    background: none;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
-/* @media (max-width: 700px) {
+@media (max-width: 580px) {
     .buttonImage--header {
         visibility: visible;
-        background: none;
     }
-} */
+}
 
 .buttonImage--menu {
     background: none;
@@ -88,6 +98,6 @@
 
 .buttonImage--menuClose {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 40px;
+    right: 30px;
 }

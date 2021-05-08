@@ -12,3 +12,11 @@
         justify-content: space-between;
     }
 }
+
+@media (max-width: 340px) {
+    .clear {
+        grid-template-columns: 1fr;
+        grid-gap-columns: 0;
+        grid-gap-rows: 20px;
+    }
+}

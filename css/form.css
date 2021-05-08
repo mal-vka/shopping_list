@@ -25,7 +25,7 @@
     width: 450px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 650px) {
     .form__input {
         font-size: 16px;
         width: 100%;
