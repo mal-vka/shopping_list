@@ -39,38 +39,23 @@
 
         <header class="header">
             <h1 class="header__title">Your shopping notebook</h1>
-            <button class="buttonImage buttonImage--header noDisplay js-menuButton">
+            <button class="buttonImage buttonImage--header js-menuButton">
                 <img class="js-menuImage" src="images/menu.svg">
             </button>
         </header>
 
-        <div class="menu js-menu">
+        <nav class="menu js-menu">
             <button class="buttonImage buttonImage--menu buttonImage--menuClose js-closeMenuButton">
                 <img class="js-closeMenuImage" src="images/close.svg">
             </button>
+            <h3 class="menu__title">My lists</h3>
 
-            <!-- <div class="menu__button">
-                <button class="buttonImage buttonImage--menu">
-                    <img class="" src="images/login.svg">
-                </button>Log in
-            </div>
-
-            <div class="menu__button">
-                <button class="buttonImage buttonImage--menu">
-                    <img class="" src="images/settings.svg">
-                </button>Settings
-            </div> -->
-
-            <ul class="menu__list">
+            <ul class="menu__listOfLists js-menuListOfLists">
 
             </ul>
 
-            <!-- <div class="menu__button">
-                <button class="buttonImage buttonImage--menu">
-                    <img class="" src="images/exit.svg">
-                </button>Log out
-            </div> -->
-        </div>
+            <button class="button button--addList js-addNewListButton">Add new list</button>
+        </nav>
 
         <div class="main">
 
