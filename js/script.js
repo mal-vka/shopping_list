@@ -6,6 +6,8 @@
 
     let currentListIndex = 0;
 
+    let menu = 0;
+
     const addNewItem = (newItem) => {
         userLists[currentListIndex].listItems.push({ content: newItem });
         display();
@@ -111,13 +113,13 @@
                 <li class="js-switchListButton">
                     <button class="button 
                         ${index === currentListIndex ? "currentListHighlight" : ""}
-                        button--ofSwitchingList">${shoppingList.listName}
+                        button--of${menu ? "Menu" : "Switching"}List">${shoppingList.listName}
                     </button>
                 </li>
             `;
         };
 
-        document.querySelector(".js-listOfLists").innerHTML = yetDisplayLists;
+        document.querySelector(`.js-listOfLists${menu ? "Menu" : ""}`).innerHTML = yetDisplayLists;
 
         bindSwitchListEvent();
     };
@@ -199,13 +201,17 @@
     };
 
     const onMenuButton = () => {
-        document.querySelector(".js-menu").classList.toggle(".menu--active");
+        menu = 1;
+        document.querySelector(".js-menu").classList.toggle("menu--active");
         toggleNoDisplayClass(document.querySelector(".js-menuImage"));
+        displayListOfLists();
     };
 
     const onCloseMenuButton = () => {
-        toggleNoDisplayClass(document.querySelector(".js-menu"));
+        document.querySelector(".js-menu").classList.toggle("menu--active");
         toggleNoDisplayClass(document.querySelector(".js-menuImage"));
+
+
     };
 
     const init = () => {
