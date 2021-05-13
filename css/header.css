@@ -5,13 +5,19 @@
     margin: 30px;
 }
 
-@media (max-width: 580px) {
+/* @media (max-width: 580px) {
     .header {
-        margin: 30px 0;
+        margin: 20px 0 40px;
         position: relative;
     }
-}
+} */
 
 .header__title {
     margin: 0 auto;
 }
+
+/* @media (max-width: 580px) {
+    .header__title {
+        font-size: 26px;
+    }
+} */

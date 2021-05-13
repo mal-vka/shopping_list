@@ -7,16 +7,10 @@
     justify-content: start;
 }
 
-@media (max-width: 650px) {
-    .clear {
-        justify-content: space-between;
-    }
-}
-
-@media (max-width: 340px) {
+/* @media (max-width: 340px) {
     .clear {
         grid-template-columns: 1fr;
-        grid-gap-columns: 0;
-        grid-gap-rows: 20px;
+        grid-column-gap: 0;
+        grid-row-gap: 20px;
     }
-}
+} */

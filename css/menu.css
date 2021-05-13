@@ -16,10 +16,11 @@
 
 .menu__title {
     font-size: 32px;
-    margin: 10px auto;
+    margin: 10px 30px;
+    text-align: left;
 }
 
 .listOfLists--menu {
     position: absolute;
-    top: 15%;
+    top: 12%;
 }

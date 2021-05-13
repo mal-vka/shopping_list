@@ -5,17 +5,12 @@
     grid-gap: 10px;
 }
 
-@media (max-width: 830px) {
+/* @media (max-width: 830px) {
     .form {
-        grid-template-columns: 450px;
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
     }
-}
-
-@media (max-width: 650px) {
-    .form {
-        grid-template-columns: 100%;
-    }
-}
+} */
 
 .form__input {
     padding: 10px;
@@ -23,11 +18,11 @@
     border: none;
     border-radius: 5px;
     width: 450px;
+    max-width: 100%;
 }
 
-@media (max-width: 650px) {
+/* @media (max-width: 650px) {
     .form__input {
-        font-size: 16px;
-        width: 100%;
+        font-size: 14px;
     }
-}
+} */
