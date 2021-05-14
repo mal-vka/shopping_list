@@ -44,24 +44,11 @@
             </button>
         </header>
 
-        <nav class="menu js-menu">
-            <button class="buttonImage buttonImage--menu buttonImage--menuClose js-closeMenuButton">
-                <img class="js-closeMenuImage" src="images/close.svg" alt="Close window icon">
-            </button>
-            <h3 class="menu__title">My lists</h3>
-
-            <ul class="listOfLists listOfLists--menu js-listOfListsMenu">
-
-            </ul>
-
-            <button class="button button--addList js-addNewListButton">Add new list</button>
-        </nav>
-
         <div class="main">
 
             <form class="form js-form">
                 <input class="form__input js-input" placeholder="What do you want to add to the current shopping list?">
-                <button class="button js-addButton">Add to list</button>
+                <button class="button button--addToList js-addButton">Add to list</button>
             </form>
 
             <section class="switchingLists">
@@ -97,6 +84,19 @@
 
         <footer class="footer">Powered by mal_vka</footer>
     </div>
+
+    <nav class="menu js-menu">
+        <button class="buttonImage buttonImage--menu buttonImage--menuClose js-closeMenuButton">
+            <img class="js-closeMenuImage" src="images/close.svg" alt="Close window icon">
+        </button>
+        <h3 class="menu__title">My lists</h3>
+
+        <ul class="listOfLists listOfLists--menu js-listOfListsMenu">
+
+        </ul>
+
+        <button class="button button--addList js-addNewListButton">Add new list</button>
+    </nav>
 
     <div class="modal noDisplay js-modalTooManyLists">
         <button class="modalClose js-modalClose">&times;</button>
