@@ -4,6 +4,12 @@
     height: calc(100vh - 20px);
     display: grid;
     grid-template-rows: auto 1fr auto;
-    grid-row-gap: 50px;
+    grid-row-gap: calc(100vh * 0.1);
     margin: 0 auto;
+}
+
+@media (max-width: 789px) {
+    .container {
+        grid-row-gap: calc(100vh * 0.05);
+    }
 }

@@ -11,6 +11,12 @@
     }
 }
 
+/* @media (max-width: 625px) {
+    .form {
+        grid-column-start: 1;
+    }
+} */
+
 .form__input {
     padding: 10px;
     background: hsla(0, 0%, 100%, 0.4);

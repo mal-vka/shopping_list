@@ -1,23 +1,11 @@
-.header {
-    /* display: grid;
-    grid-template-columns: 1fr auto; */
-    /* grid-gap: 30px; */
-    margin: 30px;
-}
-
-/* @media (max-width: 580px) {
-    .header {
-        margin: 20px 0 40px;
-        position: relative;
-    }
-} */
-
 .header__title {
-    margin: 0 auto;
+    margin: calc(100vh * 0.05) 0 0;
+    font-size: 40px;
 }
 
-/* @media (max-width: 580px) {
+@media (max-width: 789px) {
     .header__title {
-        font-size: 26px;
+        margin: calc(100vh * 0.03) 0 0;
+        font-size: 34px;
     }
-} */
+}

@@ -27,11 +27,19 @@
     background: hsla(0, 0%, 100%, 0.8);
 }
 
+/* @media (max-width: 830px) {
+    .button--addToList {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+} */
+
 .button--addList {
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 }
 
 .button--addList:hover {
@@ -43,11 +51,11 @@
     width: 200px;
 }
 
-/* @media (max-width: 700px) {
+@media (max-width: 690px) {
     .button--ofSwitchingList {
         width: 143px;
     }
-} */
+}
 
 .button--ofMenuList {
     background: none;
