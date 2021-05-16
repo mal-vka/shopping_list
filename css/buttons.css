@@ -8,20 +8,27 @@
     cursor: pointer;
 }
 
-/* @media (max-width: 650px) {
-    .button {
-        font-size: 14px;
-        width: 120px;
-        max-width: 100%;
-    }
-} */
-
-/* @media (max-width: 360px) {
+@media (max-width: 470px) {
     .button {
         width: 120px;
         margin: 0 auto;
     }
-} */
+}
+
+@media (max-width: 400px) {
+    .button {
+        width: 100px;
+        margin: 0 auto;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 350px) {
+    .button {
+        width: 90px;
+        padding: 5px;
+    }
+}
 
 .button:hover {
     background: hsla(0, 0%, 100%, 0.8);
@@ -40,6 +47,12 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+}
+
+@media (max-width: 630px) {
+    .button--addList {
+        margin-bottom: 20px;
+    }
 }
 
 .button--addList:hover {
@@ -90,17 +103,42 @@
 
 .buttonImage--header {
     visibility: hidden;
-    background: none;
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
-/* @media (max-width: 580px) {
+@media (max-width: 630px) {
     .buttonImage--header {
         visibility: visible;
+        background: none;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        width: 28px;
     }
-} */
+}
+
+@media (max-width: 500px) {
+    .buttonImage--header {
+        top: 20px;
+        right: 20px;
+        width: 25px;
+    }
+}
+
+@media (max-width: 415px) {
+    .buttonImage--header {
+        top: 20px;
+        right: 0;
+        width: 25px;
+    }
+}
+
+@media (max-width: 350px) {
+    .buttonImage--header {
+        top: 15px;
+        right: 0;
+        width: 25px;
+    }
+}
 
 .buttonImage--menu {
     background: none;

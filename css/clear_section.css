@@ -7,10 +7,19 @@
     justify-content: start;
 }
 
-/* @media (max-width: 340px) {
+@media (max-width: 630px) {
     .clear {
-        grid-template-columns: 1fr;
-        grid-column-gap: 0;
-        grid-row-gap: 20px;
+        grid-row-start: auto;
+        grid-column-start: auto;
+        grid-gap: 10px;
+        justify-content: space-between;
     }
-} */
+}
+
+@media (max-width: 380px) {
+    .clear {
+        /* grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto); */
+        grid-gap: 5px;
+    }
+}

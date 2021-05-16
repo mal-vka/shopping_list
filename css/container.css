@@ -6,10 +6,17 @@
     grid-template-rows: auto 1fr auto;
     grid-row-gap: calc(100vh * 0.1);
     margin: 0 auto;
+    position: relative;
 }
 
 @media (max-width: 789px) {
     .container {
         grid-row-gap: calc(100vh * 0.05);
+    }
+}
+
+@media (max-width: 350px) {
+    .container {
+        grid-row-gap: calc(100vh * 0.03);
     }
 }

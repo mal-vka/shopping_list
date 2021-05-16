@@ -15,11 +15,10 @@
     }
 }
 
-/* @media (max-width: 625px) {
+@media (max-width: 630px) {
     .main {
-        grid-template-columns: 100%;
-        grid-column-gap: 0;
-        grid-row-gap: 20px;
+        grid-template-columns: 1fr;
         margin: 0 auto;
+        grid-row-gap: calc(100vh * 0.02);
     }
-} */
+}

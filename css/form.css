@@ -11,11 +11,11 @@
     }
 }
 
-/* @media (max-width: 625px) {
+@media (max-width: 630px) {
     .form {
-        grid-column-start: 1;
+        grid-column-start: auto;
     }
-} */
+}
 
 .form__input {
     padding: 10px;
@@ -23,11 +23,17 @@
     border: none;
     border-radius: 5px;
     width: 450px;
-    max-width: 100%;
 }
 
-/* @media (max-width: 650px) {
+@media (max-width: 470px) {
     .form__input {
+        width: 100%;
         font-size: 14px;
     }
-} */
+}
+
+@media (max-width: 350px) {
+    .form__input {
+        font-size: 12px;
+    }
+}
