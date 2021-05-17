@@ -94,9 +94,3 @@
     align-self: start;
     overflow-wrap: break-word;
 }
-
-/* @media (max-width: 650px) {
-    .list__content {
-        font-size: 16px;
-    }
-} */
