@@ -230,8 +230,10 @@
         document.querySelector(".js-editListNameImage").addEventListener("click", onEditNameListButton);
         document.querySelector(".js-saveListNameImage").addEventListener("click", onSaveNameListButton);
 
-        const addNewListButton = document.querySelector(".js-addNewListButton");
-        addNewListButton.addEventListener("click", onAddNewListButton);
+        const addNewListButtons = document.querySelectorAll(".js-addNewListButton");
+        addNewListButtons.forEach((addNewListButton) => {
+            addNewListButton.addEventListener("click", onAddNewListButton);
+        });
 
         const clearCheckedButton = document.querySelector(".js-clearCheckedListButton");
         clearCheckedButton.addEventListener("click", onClearCheckedButton);
@@ -243,8 +245,8 @@
         deleteListButton.addEventListener("click", onDeleteListButton);
 
         const closeModalButtons = document.querySelectorAll(".js-modalClose");
-        closeModalButtons.forEach((closeModalButtons) => {
-            closeModalButtons.addEventListener("click", closeModal);
+        closeModalButtons.forEach((closeModalButton) => {
+            closeModalButton.addEventListener("click", closeModal);
         });
 
         document.querySelector(".js-overlay").addEventListener("click", closeModal);
