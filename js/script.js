@@ -65,10 +65,11 @@
 
         const toggleListButtons = document.querySelectorAll(`.js-${place}ListButton`);
 
-        toggleListButtons.forEach((toggleListButtons, index) => {
+        toggleListButtons.forEach((toggleListButton, index) => {
 
-            toggleListButtons.addEventListener("click", () => {
+            toggleListButton.addEventListener("click", () => {
                 toggleList(index);
+                onCloseMenuButton();
             });
         });
     };
