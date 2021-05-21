@@ -23,7 +23,7 @@
         display();
     };
 
-    const switchList = (index) => {
+    const toggleList = (index) => {
         currentListIndex = index;
         display();
     };
@@ -61,12 +61,14 @@
         });
     };
 
-    const bindSwitchListEvent = () => {
-        const switchListButtons = document.querySelectorAll(".js-switchListButton");
+    const bindListEvent = (place) => {
 
-        switchListButtons.forEach((switchListButtons, index) => {
-            switchListButtons.addEventListener("click", () => {
-                switchList(index);
+        const toggleListButtons = document.querySelectorAll(`.js-${place}ListButton`);
+
+        toggleListButtons.forEach((toggleListButtons, index) => {
+
+            toggleListButtons.addEventListener("click", () => {
+                toggleList(index);
             });
         });
     };
@@ -107,21 +109,25 @@
     };
 
     const displayListOfLists = () => {
+
         yetDisplayLists = "";
+        const place = menu ? "menu" : "switch";
+
         for (const [index, shoppingList] of userLists.entries()) {
+
             yetDisplayLists += `
-                <li class="js-switchListButton">
+                <li class="js-${place}ListButton">
                     <button class="button 
                         ${index === currentListIndex ? "currentListHighlight" : ""}
-                        button--of${menu ? "Menu" : "Switching"}List">${shoppingList.listName}
+                        button--${place}List">${shoppingList.listName}
                     </button>
                 </li>
             `;
         };
 
-        document.querySelector(`.js-listOfLists${menu ? "Menu" : ""}`).innerHTML = yetDisplayLists;
+        document.querySelector(`.js-${place}ListOfLists`).innerHTML = yetDisplayLists;
 
-        bindSwitchListEvent();
+        bindListEvent(place);
     };
 
     const onFormSubmit = (event) => {
@@ -208,10 +214,9 @@
     };
 
     const onCloseMenuButton = () => {
+        menu = 0;
         document.querySelector(".js-menu").classList.toggle("menu--active");
         toggleNoDisplayClass(document.querySelector(".js-menuImage"));
-
-
     };
 
     const init = () => {
@@ -238,10 +243,10 @@
         deleteListButton.addEventListener("click", onDeleteListButton);
 
         const closeModalButtons = document.querySelectorAll(".js-modalClose");
-
         closeModalButtons.forEach((closeModalButtons) => {
             closeModalButtons.addEventListener("click", closeModal);
         });
+
         document.querySelector(".js-overlay").addEventListener("click", closeModal);
 
         display();

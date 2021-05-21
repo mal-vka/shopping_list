@@ -51,18 +51,18 @@
     background-color: hsla(90, 50%, 50%, 0.6);
 }
 
-.button--ofSwitchingList {
+.button--switchList {
     margin: 10px 0;
     width: 200px;
 }
 
 @media (max-width: 690px) {
-    .button--ofSwitchingList {
+    .button--switchList {
         width: 143px;
     }
 }
 
-.button--ofMenuList {
+.button--menuList {
     background: none;
     border: none;
     margin: 5px 10px;
